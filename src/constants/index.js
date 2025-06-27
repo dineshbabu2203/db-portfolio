@@ -292,10 +292,7 @@ const projects = [
        {
         name: "Node.js",
         color: "green-text-gradient",
-      }, {
-        name: "Chaincode",
-        color: "pink-text-gradient",
-      },
+      }
     ],
     image:doctor ,
     source_code_link: "https://github.com/dineshbabu2203/Doctor-Appoint-Booking-System-",
