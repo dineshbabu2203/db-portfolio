@@ -23,7 +23,7 @@ import {
   Cryptoo,
   ipfs,
   Marketplace,
-  go,solidity,ethereum,python,hyperledger,sql,Hardhat
+  go,solidity,ethereum,python,hyperledger,sql,Hardhat,doctor
 
 } from "../assets";
 
@@ -297,7 +297,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: Marketplace,
+    image:doctor ,
     source_code_link: "https://github.com/dineshbabu2203/Doctor-Appoint-Booking-System-",
   },
 ];
