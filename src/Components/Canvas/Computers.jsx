@@ -29,38 +29,52 @@ const Computers = ({ scale, position }) => {
 };
 
 export const ComputersCanvas = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [viewport, setViewport] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
 
   useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
+    const handleResize = () => {
+      setViewport({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const scale = windowWidth < 500 ? 0.6 : 0.75;
-  const position = windowWidth < 500 ? [0, -3, -2.2] : [0, -3.25, -1.5];
+  // Adjust scale and position based on width
+  const { width } = viewport;
+  const scale = width < 500 ? 0.65 : width < 768 ? 0.7 : 0.75;
+  const position =
+    width < 500
+      ? [0, -3, -2.2]
+      : width < 768
+      ? [0, -3.1, -2]
+      : [0, -3.25, -1.5];
 
   return (
-    <div className="canvas-container">
-      <Canvas
-        frameloop="demand"
-        shadows
-        dpr={[1, 2]}
-        camera={{ position: [20, 3, 5], fov: 25 }}
-        gl={{ preserveDrawingBuffer: true }}
-      >
-        <Suspense fallback={<CanvasLoader />}>
-          <OrbitControls
-            enableZoom={false}
-            maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 2}
-          />
-          <Computers scale={scale} position={position} />
-        </Suspense>
+    <Canvas
+      frameloop="demand"
+      shadows
+      dpr={[1, 2]}
+      camera={{ position: [20, 3, 5], fov: 25 }}
+      gl={{ preserveDrawingBuffer: true }}
+    >
+      <Suspense fallback={<CanvasLoader />}>
+        <OrbitControls
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
+        <Computers scale={scale} position={position} />
+      </Suspense>
 
-        <Preload all />
-      </Canvas>
-    </div>
+      <Preload all />
+    </Canvas>
   );
 };
 
