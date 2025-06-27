@@ -4,7 +4,7 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
 const Computers = ({ scale, position }) => {
-  const computer = useGLTF("/desktop_pc/scene.gltf");
+  const computer = useGLTF("/desktop_pc/scene.gltf"); // ✅ use absolute path from public/
 
   return (
     <mesh>
@@ -29,54 +29,40 @@ const Computers = ({ scale, position }) => {
 };
 
 export const ComputersCanvas = () => {
-  const [viewport, setViewport] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setViewport({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
+    const checkViewport = () => {
+      setIsMobile(window.innerWidth < 768); // Define "mobile"
     };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    checkViewport();
+    window.addEventListener("resize", checkViewport);
+    return () => window.removeEventListener("resize", checkViewport);
   }, []);
 
-  // Adjust scale and position based on width
-  const { width } = viewport;
-  const scale = width < 500 ? 0.65 : width < 768 ? 0.7 : 0.75;
-  const position =
-    width < 500
-      ? [0, -3, -2.2]
-      : width < 768
-      ? [0, -3.1, -2]
-      : [0, -3.25, -1.5];
+  const scale = isMobile ? 0.55 : 0.75;
+  const position = isMobile ? [0, -3.2, -2.4] : [0, -3.25, -1.5];
 
   return (
-    <div className="w-full h-[400px]">
-    <Canvas
-      frameloop="demand"
-      shadows
-      dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <Computers scale={scale} position={position} />
-      </Suspense>
+    <div className="w-full h-[300px] sm:h-[450px] md:h-[500px] lg:h-[600px]">
+      <Canvas
+        frameloop="demand"
+        shadows
+        dpr={[1, 2]}
+        camera={{ position: [20, 3, 5], fov: 25 }}
+        gl={{ preserveDrawingBuffer: true }}
+      >
+        <Suspense fallback={<CanvasLoader />}>
+          <OrbitControls
+            enableZoom={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+          <Computers scale={scale} position={position} />
+        </Suspense>
 
-      <Preload all />
-    </Canvas>
-
+        <Preload all />
+      </Canvas>
     </div>
   );
 };
