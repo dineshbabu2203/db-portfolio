@@ -15,20 +15,7 @@ import Footer from "./Components/Footer";
 import MobileWarning from "./Components/MobileWarning"; // ⬅️ New import
 
 function App() {
-  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize(); // Check once on load
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Show mobile warning instead of app
-  if (isMobile) return <MobileWarning />;
 
   return (
     <BrowserRouter>
