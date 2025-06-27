@@ -1,38 +1,54 @@
-import { h1 } from "framer-motion/client"
-import { BrowserRouter } from "react-router-dom"
-import Hero from "./Components/Hero"
-import Navbar from "./Components/Navbar"
-import About from "./Components/About"
-import Experience from "./Components/Experience"
-import Works from "./Components/Works"
-import Tech from "./Components/Tech"
-import Contact from "./Components/Contact"
-import StarsCanvas from "./Components/Canvas/Stars"
-import Footer from "./Components/Footer"
+// src/App.jsx
 
+import React, { useEffect, useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+
+import Hero from "./Components/Hero";
+import Navbar from "./Components/Navbar";
+import About from "./Components/About";
+import Experience from "./Components/Experience";
+import Works from "./Components/Works";
+import Tech from "./Components/Tech";
+import Contact from "./Components/Contact";
+import StarsCanvas from "./Components/Canvas/Stars";
+import Footer from "./Components/Footer";
+import MobileWarning from "./Components/MobileWarning"; // ⬅️ New import
 
 function App() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize(); // Check once on load
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Show mobile warning instead of app
+  if (isMobile) return <MobileWarning />;
 
   return (
     <BrowserRouter>
-       <div className="relative z-0 bg-primary">
+      <div className="relative z-0 bg-primary">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-          <Navbar/>
-          <Hero/>
+          <Navbar />
+          <Hero />
         </div>
-        <About/>
-        <Experience/>
-        <Tech/>
-        <Works/>
-     
+        <About />
+        <Experience />
+        <Tech />
+        <Works />
         <div className="relative z-0">
-          {/* <Contact/>
-          <StarsCanvas/> */}
-          <Footer/>
+          {/* <Contact /> */}
+          {/* <StarsCanvas /> */}
+          <Footer />
         </div>
-       </div>
+      </div>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

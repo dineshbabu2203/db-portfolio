@@ -15,6 +15,26 @@
   color-scheme: dark;
 }
 
+/* src/index.css or your global CSS */
+.canvas-container {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .canvas-container {
+    height: 300px;
+  }
+}
+
+@media (min-width: 769px) {
+  .canvas-container {
+    height: 500px;
+  }
+}
+
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
