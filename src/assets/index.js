@@ -41,7 +41,7 @@ import solidity from './tech/solidity.png'
 import sql from './tech/sql.png'
 import hyperledger from './tech/hyperledger.png'
 import ethereum from './tech/ethereum.png'
-import Hardhat from './tech/hardhat.png'
+import Hardhat from './tech/Hardhat.png'
 import python from './tech/python.png'
 
 
