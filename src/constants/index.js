@@ -272,6 +272,34 @@ const projects = [
     image: Marketplace,
     source_code_link: "https://github.com/dineshbabu2203/IPFS_Storage.git",
   },
+  {
+    name:"DOCTOR-BOOKING-SYSTEM:- Hyperledger",
+    description:
+      "This is a full-stack web application that allows patients to book appointments with doctors and make secure, tamper-proof payments using Hyperledger Fabric. While user profiles, appointments, and doctor management are handled with MongoDB, the payment transaction records are stored on a private blockchain using Fabric and Chaincode for enhanced security, traceability, and auditability..",
+    tags: [
+      {
+        name: "Hyperledger",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "React",
+        color: "green-text-gradient",
+      },
+      {
+        name: "MongoDB",
+        color: "pink-text-gradient",
+      },
+       {
+        name: "Node.js",
+        color: "green-text-gradient",
+      }, {
+        name: "Chaincode",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: Marketplace,
+    source_code_link: "https://github.com/dineshbabu2203/Doctor-Appoint-Booking-System-",
+  },
 ];
 
 export { services, technologies, experiences,  projects };

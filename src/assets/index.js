@@ -43,6 +43,7 @@ import hyperledger from './tech/hyperledger.png'
 import ethereum from './tech/ethereum.png'
 import Hardhat from './tech/Hardhat.png'
 import python from './tech/python.png'
+import doctor from './doctor.png'
 
 
 
@@ -88,5 +89,5 @@ export {
   solidity,
   go,
   ethereum,
-  hyperledger
+  hyperledger,doctor
 };
