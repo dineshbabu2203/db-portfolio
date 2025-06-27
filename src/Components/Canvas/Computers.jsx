@@ -4,7 +4,7 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
 const Computers = ({ scale, position }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  const computer = useGLTF("/desktop_pc/scene.gltf");
 
   return (
     <mesh>
@@ -57,6 +57,7 @@ export const ComputersCanvas = () => {
       : [0, -3.25, -1.5];
 
   return (
+    <div className="w-full h-[400px]">
     <Canvas
       frameloop="demand"
       shadows
@@ -75,6 +76,8 @@ export const ComputersCanvas = () => {
 
       <Preload all />
     </Canvas>
+
+    </div>
   );
 };
 
