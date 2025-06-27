@@ -44,26 +44,23 @@ export const ComputersCanvas = () => {
   const position = isMobile ? [0, -3.2, -2.4] : [0, -3.25, -1.5];
 
   return (
-    <div className="w-full h-[300px] sm:h-[450px] md:h-[500px] lg:h-[600px]">
-      <Canvas
-        frameloop="demand"
-        shadows
-        dpr={[1, 2]}
-        camera={{ position: [20, 3, 5], fov: 25 }}
-        gl={{ preserveDrawingBuffer: true }}
-      >
-        <Suspense fallback={<CanvasLoader />}>
-          <OrbitControls
-            enableZoom={false}
-            maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 2}
-          />
-          <Computers scale={scale} position={position} />
-        </Suspense>
-
-        <Preload all />
-      </Canvas>
-    </div>
+     <Canvas
+    frameloop="demand"
+    shadows
+    dpr={[1, 2]}
+    camera={{ position: [20, 3, 5], fov: 25 }}
+    gl={{ preserveDrawingBuffer: true }}
+  >
+    <Suspense fallback={<CanvasLoader />}>
+      <OrbitControls
+        enableZoom={false}
+        maxPolarAngle={Math.PI / 2}
+        minPolarAngle={Math.PI / 2}
+      />
+      <Computers scale={scale} position={position} />
+    </Suspense>
+    <Preload all />
+  </Canvas>
   );
 };
 
