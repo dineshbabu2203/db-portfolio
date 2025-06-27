@@ -275,7 +275,7 @@ const projects = [
   {
     name:"DOCTOR-BOOKING-SYSTEM:- Hyperledger",
     description:
-      "This is a full-stack web application that allows patients to book appointments with doctors and make secure, tamper-proof payments using Hyperledger Fabric. While user profiles, appointments, and doctor management are handled with MongoDB, the payment transaction records are stored on a private blockchain using Fabric and Chaincode for enhanced security, traceability, and auditability..",
+      "A full-stack doctor appointment booking system where patients can schedule appointments and make secure payments. While user data is managed with MongoDB, payment records are stored on a private Hyperledger Fabric blockchain for enhanced security and auditability. Chaincode ensures tamper-proof transaction logging.",
     tags: [
       {
         name: "Hyperledger",
