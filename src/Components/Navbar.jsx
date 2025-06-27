@@ -61,14 +61,14 @@ const Navbar = () => {
           ))}
 
           {/* Resume Button (Desktop) */}
-          <li>
+          {/* <li>
             <button
               onClick={handleResumeClick}
               className="bg-white text-black px-4 py-2 rounded-lg text-[14px] font-semibold hover:bg-gray-300 transition"
             >
               Resume
             </button>
-          </li>
+          </li> */}
         </ul>
 
         {/* Mobile Menu */}
