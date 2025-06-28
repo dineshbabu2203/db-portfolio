@@ -48,7 +48,7 @@ const About = () => {
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
         I'm a skilled Blockchain and Web  developer with hands on experience in javascript and
-        solidity, and expertise in frameworks like React, Node.js, Hardhat , truffle and 
+        solidity, and expertise in frameworks like React, Node.js, Hardhat , Truffle and 
         Ethereum. I'm a quick learner and 
         create efficient, scalable, and user-friendly solutions that solve
         real-world problems. Let's work together to bring your ideas to life!
