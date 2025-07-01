@@ -24,7 +24,7 @@ import {
   Cryptoo,
   ipfs,
   Marketplace,
-  go,solidity,ethereum,python,hyperledger,sql,Hardhat,doctor
+  go,solidity,ethereum,python,hyperledger,sql,Hardhat,doctor,ganache
 
 } from "../assets";
 
