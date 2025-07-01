@@ -1,3 +1,4 @@
+import { n } from "maath/dist/index-0332b2ed.esm";
 import {
   mobile,
   backend,
@@ -72,10 +73,10 @@ const technologies = [
     name: "JavaScript",
     icon: javascript,
   },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
+  // {
+  //   name: "TypeScript",
+  //   icon: typescript,
+  // },
   {
     name: "React JS",
     icon: reactjs,
@@ -128,6 +129,10 @@ const technologies = [
     name: "hardhat",
     icon: Hardhat,
   },
+  {
+    name: "ganache",
+    icon: ganache,
+  }
 ];
 
 const experiences = [
