@@ -44,7 +44,7 @@ import ethereum from './tech/ethereum.png'
 import Hardhat from './tech/Hardhat.png'
 import python from './tech/python.png'
 import doctor from './doctor.png'
-import ganache from './ganache.png'
+import ganache from './tech/ganache.png'
 
 
 export {
