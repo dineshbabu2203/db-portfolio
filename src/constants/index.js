@@ -19,7 +19,7 @@ import {
   infosys,
   Jetking,
   threejs,
-  Devtern,
+  Serendipity_Labs,
   Stocks,
   Cryptoo,
   ipfs,
@@ -137,16 +137,16 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Web Development Internship",
-    company_name: "Dev-Tern",
-    icon: Devtern,
+    title: "Intern-Ops Support",
+    company_name: "Serendipity Labs",
+    icon: Serendipity_Labs,
     iconBg: "#383E56",
-    date: "March 2024- April 2024",
+    date: "December 2025 - Present",
     points: [
-      "Developing and maintaining web applications using HTML,CSS, Javascript  and other related technologies.",
-      "Collaborating with teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+       "Providing operations support to Serendipity Labs by handling technical support tickets.",
+        "Diagnosing and resolving system glitches on client machines in a timely manner.",
+       "Coordinating with internal teams to ensure minimal downtime and smooth operations.",
+       "Ensuring consistent service quality and user satisfaction through effective troubleshooting.",
     ],
   },
   {
@@ -154,7 +154,7 @@ const experiences = [
     company_name: "Jet-King InfoTrain",
     icon: Jetking,
     iconBg: "#E6DEDD",
-    date: "Nov 2024 - Present",
+    date: "Nov 2024 - October 2025",
     points: [
       "Currently pursuing a Blockchain Development certification at Jetking with hands-on experience in building decentralized applications (DApps).",
       "Gained in-depth knowledge of blockchain fundamentals, consensus algorithms, smart contracts, and decentralized networks.",
